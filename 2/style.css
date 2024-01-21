@@ -1,0 +1,136 @@
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 40px;
+	text-align: center;
+	color: #F39F5A;
+}
+
+body{
+	width: 100%;
+	min-height: 100vh;
+	background: linear-gradient(135deg, #451952, #662549);
+}
+.nav-link {
+	padding: .5em;
+}
+#f, #s {
+	text-decoration: none;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-top: 2em;
+	width: 15em;
+	min-height: 60vh;
+	background: #AE445A;
+	padding: 10px;
+	border-radius: 15px;
+}
+.add {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 20px;
+	margin-top: 1em;
+	padding-left: 1em;
+}
+input {
+	border-radius: 20px;
+	width: 100%;
+	text-align: start;
+	padding-left: .5em;
+	border: none;
+	outline: none;
+}
+#addBtn {
+	align-self: flex-end;
+	color: #fff;
+	background: #F39F5A;
+	width: 10%;
+	max-width: 4em;
+	position: absolute;
+	border-radius: 20px;
+	border: none;
+	outline: none;
+}
+h1 {
+	padding-left: .75em;
+	color: #fff;
+	margin-top: .5em;
+}
+
+ul {
+	padding-top: 18px;
+}
+
+ul li {
+	list-style: none;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	font-size: 1em;
+	user-select: none;
+	cursor: pointer;
+	position: relative;
+	margin-left: 2em;
+	padding-top: .2em;
+}
+ul li::before {
+	content: "";
+	position: absolute;
+	height: 25px;
+	width: 25px;
+	border-radius: 50%;
+	background-image: url(../images/unchecked.png);
+	background-size: cover;
+	background-position: center;
+	margin-top: 8px;
+	margin-left: -1em;
+}
+
+ul li.checked {
+	color: #555;
+	text-decoration: line-through;
+}
+ul li.checked::before {
+	background-image: url(../images/checked.png);
+}
+ul li span {
+	color: white;
+	margin-top: .2em;
+	margin-left: .5em;
+}
+ul li span:hover {
+	cursor: pointer;
+	color: #F39F5A;
+}
+#listContainer {
+	word-break: break-all;
+}
+
+
+@media (max-width: 1000px) {
+	* {
+		font-size: 20px;
+	}
+	#addBtn {
+		width: 15%;
+	}
+	ul li::before {
+		height: 10px;
+		width: 10px;
+	}
+}
