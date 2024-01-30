@@ -31,7 +31,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	margin-top: 2em;
+	margin-top: 1em;
 	width: 15em;
 	min-height: 60vh;
 	background: #AE445A;
@@ -70,35 +70,39 @@ h1 {
 	padding-left: .75em;
 	color: #fff;
 	margin-top: .5em;
+	user-select: none;
 }
 
 ul {
-	padding-top: 18px;
+	padding: 28px 0;
 }
 
 ul li {
+	text-align: start;
+	width: 88%;
 	list-style: none;
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
 	font-size: 1em;
-	user-select: none;
-	cursor: pointer;
+	user-select: text;
 	position: relative;
-	margin-left: 2em;
-	padding-top: .2em;
+	margin-left: 1em;
+	padding-top: .1em;
+	cursor: pointer;
 }
+ul li::selection {
+	color: #fff;
+  background-color: #F39F5A;
+} 
 ul li::before {
 	content: "";
 	position: absolute;
-	height: 25px;
-	width: 25px;
+	height: .7em;
+	width: .7em;
 	border-radius: 50%;
 	background-image: url(images/unchecked.png);
 	background-size: cover;
 	background-position: center;
-	margin-top: 8px;
-	margin-left: -1em;
+	top: .4em;
+	left: -1em;
 }
 
 ul li.checked {
@@ -109,16 +113,19 @@ ul li.checked::before {
 	background-image: url(images/checked.png);
 }
 ul li span {
+	position: absolute;
+	user-select: none;
 	color: white;
-	margin-top: .2em;
-	margin-left: .5em;
+	top: .2em;
+	right: 0;
+	left: 13em;
 }
 ul li span:hover {
 	cursor: pointer;
 	color: #F39F5A;
 }
 #listContainer {
-	word-break: break-all;
+	word-break: break-word;
 }
 
 
@@ -129,8 +136,7 @@ ul li span:hover {
 	#addBtn {
 		width: 15%;
 	}
-	ul li::before {
-		height: 10px;
-		width: 10px;
+	ul li span {
+		left: 12.6em;
 	}
 }
