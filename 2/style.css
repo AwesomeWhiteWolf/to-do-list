@@ -60,7 +60,6 @@ input {
 	color: #fff;
 	background: #F39F5A;
 	width: 9%;
-	left: 24em;
 	max-width: 4em;
 	position: absolute;
 	border-radius: 20px;
@@ -135,7 +134,7 @@ ul li span:hover {
 		font-size: 20px;
 	}
 	#addBtn {
-		width: 15%;
+		width: 23%;
 	}
 	ul li span {
 		left: 12.6em;
