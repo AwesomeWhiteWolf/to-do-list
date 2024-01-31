@@ -45,13 +45,13 @@ main {
 	align-items: center;
 	border-radius: 20px;
 	margin-top: 1em;
-	padding-left: 1em;
 }
 input {
 	border-radius: 20px;
 	width: 100%;
 	text-align: start;
 	padding-left: .5em;
+	padding-right: 3.8em;
 	border: none;
 	outline: none;
 }
@@ -59,7 +59,8 @@ input {
 	align-self: flex-end;
 	color: #fff;
 	background: #F39F5A;
-	width: 10%;
+	width: 9%;
+	left: 24em;
 	max-width: 4em;
 	position: absolute;
 	border-radius: 20px;
