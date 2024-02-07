@@ -5,13 +5,23 @@
 	box-sizing: border-box;
 	font-size: 40px;
 	text-align: center;
-	color: #F39F5A;
+	color: var(--text-color);
+}
+:root {
+	/* --bg-color: linear-gradient(135deg, #451952, #662549);
+	--text-color: #F39F5A;
+	--main-panel-color: #AE445A;
+	--input-color: #fff; */
+	--bg-color: #6A2C70;
+	--text-color: #F39F5A;
+	--main-panel-color: #B83B5E;
+	--input-color: #FFF7F1;
 }
 
 body{
 	width: 100%;
 	min-height: 100vh;
-	background: linear-gradient(135deg, #451952, #662549);
+	background: var(--bg-color);
 }
 .nav-link {
 	padding: .5em;
@@ -34,7 +44,7 @@ main {
 	margin-top: 1em;
 	width: 15em;
 	min-height: 60vh;
-	background: #AE445A;
+	background: var(--main-panel-color);
 	padding: 10px;
 	border-radius: 15px;
 }
@@ -47,6 +57,7 @@ main {
 	margin-top: 1em;
 }
 input {
+	background-color: var(--input-color);
 	border-radius: 20px;
 	width: 100%;
 	text-align: start;
@@ -57,20 +68,14 @@ input {
 }
 #addBtn {
 	align-self: flex-end;
-	color: #fff;
-	background: #F39F5A;
+	color: var(--input-color);
+	background: var(--text-color);
 	width: 9%;
 	max-width: 4em;
 	position: absolute;
 	border-radius: 20px;
 	border: none;
 	outline: none;
-}
-h1 {
-	padding-left: .75em;
-	color: #fff;
-	margin-top: .5em;
-	user-select: none;
 }
 
 ul {
@@ -89,8 +94,8 @@ ul li {
 	cursor: pointer;
 }
 ul li::selection {
-	color: #fff;
-  background-color: #F39F5A;
+	color: var(--input-color);
+  background-color: var(--text-color);
 } 
 ul li::before {
 	content: "";
@@ -115,14 +120,14 @@ ul li.checked::before {
 ul li span {
 	position: absolute;
 	user-select: none;
-	color: white;
+	color: var(--input-color);
 	top: .2em;
 	right: 0;
 	left: 13em;
 }
 ul li span:hover {
 	cursor: pointer;
-	color: #F39F5A;
+	color: var(--text-color);
 }
 #listContainer {
 	word-break: break-word;
