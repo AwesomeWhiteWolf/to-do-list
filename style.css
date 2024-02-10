@@ -83,7 +83,8 @@ input {
 	font-size: 25px;
 	border: none;
 }
-.btn:active {
+.btn:active,
+#addBtn:active {
 	background-color: orange;
 }
 

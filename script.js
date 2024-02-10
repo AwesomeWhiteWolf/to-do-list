@@ -4,7 +4,6 @@ const addBtn = document.getElementById("addBtn");
 const speechBtn = document.getElementById("speechBtn");
 addBtn.onclick = addTask;
 speechBtn.onclick = speech;
-let speechFlag = false;
 
 function addTask() {
     if (input.value != "") {
@@ -55,23 +54,9 @@ recognizer.addEventListener('result', (e) => {
     if (e.results[0].isFinal) {
         addTask();
     }
-    // var result = e.results[e.resultIndex];
-    // input.value = e.results[0][0].transcript;
-    // addTask();
-    // if (result.isFinal) {
-    //     input.value = result[0].transcript;
-    //     addTask();
-    // }
 });
 
 function speech() {
-    if (speechFlag == false) {
-        recognizer.start();
-        speechFlag = true;
-    }
-    else {
-        alert('Распознавание голоса закончено');
-        speechFlag = false;
-    }
+    recognizer.start();
 }
 

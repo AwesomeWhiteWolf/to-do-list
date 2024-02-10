@@ -39,14 +39,13 @@ main {
 	align-items: flex-start;
 	margin-top: 1em;
 	width: 15em;
-	min-height: 60vh;
+	min-height: 75vh;
 	background: var(--main-panel-color);
 	padding: 10px;
 	border-radius: 15px;
 }
 .add {
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	border-radius: 20px;
@@ -55,15 +54,16 @@ main {
 input {
 	background-color: var(--input-color);
 	border-radius: 20px;
-	width: 100%;
+	width: 80%;
 	text-align: start;
 	padding-left: .5em;
-	padding-right: 3.8em;
+	padding-right: 2.5em;
 	border: none;
 	outline: none;
 }
 #addBtn {
 	align-self: flex-end;
+	margin-left: 7.9em;
 	color: var(--input-color);
 	background: var(--text-color);
 	width: 9%;
@@ -72,6 +72,20 @@ input {
 	border-radius: 20px;
 	border: none;
 	outline: none;
+}
+.btn {
+	width: 45px;
+	height:45px;
+	border-radius: 50%;
+	margin-left: 2.5em;
+	background-color: var(--text-color);
+	color: var(--input-color);
+	font-size: 25px;
+	border: none;
+}
+.btn:active,
+#addBtn:active {
+	background-color: orange;
 }
 
 ul {
@@ -132,22 +146,28 @@ ul li span:hover {
 
 @media (max-width: 1190px) {
 	#addBtn {
-		width: 23%;
+		width: 13%;
 	}
 	input {
-		padding-right: 4.1em;
+		padding-right: 2.8em;
 	}
 }
 
 @media (max-width: 700px) {
 	input {
-		padding-right: 4.2em;
+		padding-right: 2.8em;
 	}
 	* {
 		font-size: 20px;
 	}
 	#addBtn {
-		width: 23%;
+		width: 17%;
+		margin-right: .7em;
+	}
+	.btn {
+		width: 23px;
+		height: 23px;
+		font-size: 13px;
 	}
 	ul li span {
 		left: 12.6em;
