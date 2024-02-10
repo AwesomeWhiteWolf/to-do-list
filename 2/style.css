@@ -8,10 +8,6 @@
 	color: var(--text-color);
 }
 :root {
-	/* --bg-color: linear-gradient(135deg, #451952, #662549);
-	--text-color: #F39F5A;
-	--main-panel-color: #AE445A;
-	--input-color: #fff; */
 	--bg-color: #6A2C70;
 	--text-color: #F39F5A;
 	--main-panel-color: #B83B5E;
