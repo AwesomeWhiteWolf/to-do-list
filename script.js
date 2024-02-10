@@ -40,11 +40,11 @@ function showTask() {
 showTask();
 
 var recognizer = new webkitSpeechRecognition();
-// recognizer.addEventListener("speechend", () => {
-//     console.log("Speech has stopped being detected");
-//     recognizer.stop();
-//     speechFlag = false;
-//   });
+recognizer.addEventListener("speechend", () => {
+    alert("Speech has stopped being detected");
+    recognizer.stop();
+    speechFlag = false;
+  });
 recognizer.interimResults = true;
 recognizer.lang = 'ru-Ru';
 
@@ -61,9 +61,9 @@ function speech() {
         recognizer.start();
         speechFlag = true;
     }
-    else {
-        recognizer.stop();
-        speechFlag = false;
-    }
+    // else {
+    //     recognizer.stop();
+    //     speechFlag = false;
+    // }
 }
 
