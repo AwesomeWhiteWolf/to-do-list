@@ -39,12 +39,14 @@ function showTask() {
 }
 showTask();
 
-var recognizer = new webkitSpeechRecognition();
-recognizer.addEventListener("end", () => {
-    alert("Speech has stopped being detected");
-    recognizer.stop();
+// var recognizer = new webkitSpeechRecognition();
+const speechRecognition =
+  window.SpeechRecognition || window.webkitSpeechRecognition
+const recognizer = new speechRecognition();
+recognizer.onend = () => {
+    alert('Распознавание голоса закончено');
     speechFlag = false;
-  });
+}
 recognizer.interimResults = true;
 recognizer.lang = 'ru-Ru';
 
