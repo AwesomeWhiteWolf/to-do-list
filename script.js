@@ -43,19 +43,26 @@ const speechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition
 const recognizer = new speechRecognition();
 
-recognizer.interimResults = false;
+recognizer.interimResults = true;
 recognizer.lang = 'ru-Ru';
 
-recognizer.onresult = function (e) {
+recognizer.addEventListener('result', (e) => {
+    const text = Array.from(e.results)
+    .map(result => result[0])
+    .map(result => result.transcript)
+    .join('');
+    input.value = text;
+    if (e.results[0].isFinal) {
+        addTask();
+    }
     // var result = e.results[e.resultIndex];
-    input.value = e.results[0][0].transcript;
-    alert(e.results[0][0].transcript);
+    // input.value = e.results[0][0].transcript;
     // addTask();
     // if (result.isFinal) {
     //     input.value = result[0].transcript;
     //     addTask();
     // }
-};
+});
 
 function speech() {
     if (speechFlag == false) {
