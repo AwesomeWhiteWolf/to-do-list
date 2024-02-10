@@ -40,7 +40,7 @@ function showTask() {
 showTask();
 
 var recognizer = new webkitSpeechRecognition();
-recognizer.addEventListener("speechend", () => {
+recognizer.addEventListener("end", () => {
     alert("Speech has stopped being detected");
     recognizer.stop();
     speechFlag = false;
