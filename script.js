@@ -63,8 +63,6 @@ function speech() {
     }
     else {
         alert('Распознавание голоса закончено');
-        // recognizer.stop();
-        addTask();
         speechFlag = false;
     }
 }
