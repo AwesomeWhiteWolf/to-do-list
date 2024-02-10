@@ -45,6 +45,8 @@ const speechRecognition =
 const recognizer = new speechRecognition();
 recognizer.onend = () => {
     alert('Распознавание голоса закончено');
+    input.value = result[0].transcript;
+    addTask();
     speechFlag = false;
 }
 recognizer.interimResults = true;
