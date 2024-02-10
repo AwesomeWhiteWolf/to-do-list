@@ -61,7 +61,7 @@ function speech() {
     }
     else {
         alert('Распознавание голоса закончено');
-        // recognizer.stop();
+        recognizer.stop();
         speechFlag = false;
     }
 }
