@@ -4,7 +4,7 @@ const addBtn = document.getElementById("addBtn");
 const speechBtn = document.getElementById("speechBtn");
 addBtn.onclick = addTask;
 speechBtn.onclick = speech;
-// let speechFlag = false;
+let speechFlag = false;
 
 function addTask() {
     if (input.value != "") {
@@ -54,6 +54,8 @@ recognizer.onresult = function (event) {
     if (result.isFinal) {
         input.value = result[0].transcript;
         addTask();
+    } else {
+        console.log('Промежуточный результат: ', result[0].transcript);
     }
 };
 
@@ -61,6 +63,13 @@ var synth = window.speechSynthesis;
 var utterance = new SpeechSynthesisUtterance('How about we say this now? This is quite a long sentence to say.');
 
 function speech() {
-    recognizer.start();
+    if (speechFlag == false) {
+        recognizer.start();
+        speechFlag = true;
+    }
+    else {
+        synth.pause();
+        speechFlag = false;
+    }
 }
 
