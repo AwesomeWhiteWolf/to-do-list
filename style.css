@@ -83,6 +83,9 @@ input {
 	font-size: 25px;
 	border: none;
 }
+.btn:active {
+	background-color: orange;
+}
 
 ul {
 	padding: 28px 0;

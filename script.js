@@ -39,28 +39,22 @@ function showTask() {
 }
 showTask();
 
-
-
-
 var recognizer = new webkitSpeechRecognition();
-
-// Ставим опцию, чтобы распознавание началось ещё до того, как пользователь закончит говорить
+// recognizer.addEventListener("speechend", () => {
+//     console.log("Speech has stopped being detected");
+//     recognizer.stop();
+//     speechFlag = false;
+//   });
 recognizer.interimResults = true;
 recognizer.lang = 'ru-Ru';
 
-// Используем колбек для обработки результатов
 recognizer.onresult = function (event) {
     var result = event.results[event.resultIndex];
     if (result.isFinal) {
         input.value = result[0].transcript;
         addTask();
-    } else {
-        console.log('Промежуточный результат: ', result[0].transcript);
     }
 };
-
-var synth = window.speechSynthesis;
-var utterance = new SpeechSynthesisUtterance('How about we say this now? This is quite a long sentence to say.');
 
 function speech() {
     if (speechFlag == false) {
@@ -68,7 +62,7 @@ function speech() {
         speechFlag = true;
     }
     else {
-        synth.pause();
+        recognizer.stop();
         speechFlag = false;
     }
 }
