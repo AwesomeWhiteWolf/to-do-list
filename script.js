@@ -39,16 +39,10 @@ function showTask() {
 }
 showTask();
 
-// var recognizer = new webkitSpeechRecognition();
 const speechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition
 const recognizer = new speechRecognition();
-recognizer.onend = () => {
-    alert('Распознавание голоса закончено');
-    input.value = result[0].transcript;
-    addTask();
-    speechFlag = false;
-}
+
 recognizer.interimResults = true;
 recognizer.lang = 'ru-Ru';
 
@@ -65,9 +59,10 @@ function speech() {
         recognizer.start();
         speechFlag = true;
     }
-    // else {
-    //     recognizer.stop();
-    //     speechFlag = false;
-    // }
+    else {
+        alert('Распознавание голоса закончено');
+        // recognizer.stop();
+        speechFlag = false;
+    }
 }
 
