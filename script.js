@@ -49,7 +49,8 @@ recognizer.lang = 'ru-Ru';
 recognizer.onresult = function (e) {
     // var result = e.results[e.resultIndex];
     input.value = e.results[0][0].transcript;
-    addTask();
+    alert(e.results[0][0].transcript);
+    // addTask();
     // if (result.isFinal) {
     //     input.value = result[0].transcript;
     //     addTask();
