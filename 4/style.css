@@ -7,16 +7,11 @@
 	text-align: center;
 	color: var(--text-color);
 }
-:root { 
-	--bg-color: #2C3333; 
-	--text-color: #A5C9CA;
-	--main-panel-color: #395B64;
-	--input-color: #E7F6F2;
-	
-	/* --bg-color: #191A19; 
-	--text-color: #D8E9A8;
-	--main-panel-color: #1E5128;
-	--input-color: #4E9F3D; */
+:root {
+	--bg-color: #6A2C70;
+	--text-color: #F39F5A;
+	--main-panel-color: #B83B5E;
+	--input-color: #FFF7F1;
 }
 
 body{
@@ -27,7 +22,7 @@ body{
 .nav-link {
 	padding: .5em;
 }
-#s, #t {
+#f, #s {
 	text-decoration: none;
 }
 
@@ -118,7 +113,7 @@ ul li::before {
 	height: .7em;
 	width: .7em;
 	border-radius: 50%;
-	background-image: url(images/unchecked.png);
+	background-image: url(../images/unchecked.png);
 	background-size: cover;
 	background-position: center;
 	top: .4em;
@@ -130,7 +125,7 @@ ul li.checked {
 	text-decoration: line-through;
 }
 ul li.checked::before {
-	background-image: url(images/checked.png);
+	background-image: url(../images/checked.png);
 }
 ul li span {
 	position: absolute;
