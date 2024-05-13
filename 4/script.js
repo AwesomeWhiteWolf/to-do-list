@@ -30,11 +30,11 @@ listContainer.addEventListener("click", function(e){
 }, false);
 
 function saveData() {
-    localStorage.setItem("data2", listContainer.innerHTML);
+    localStorage.setItem("data3", listContainer.innerHTML);
 }
 
 function showTask() {
-    listContainer.innerHTML = localStorage.getItem("data2");
+    listContainer.innerHTML = localStorage.getItem("data3");
 }
 showTask();
 
@@ -60,3 +60,24 @@ function speech() {
     recognizer.start();
 }
 
+const navLinks = document.querySelectorAll('.nav-link');
+
+navLinks.forEach(link => {
+  const linkId = link.id; // Получаем ID ссылки
+  const linkText = link.querySelector('.link-text');
+  const editButton = link.querySelector('.edit-btn');
+
+  // Загружаем текст ссылки из localStorage при загрузке страницы
+  const savedText = localStorage.getItem(linkId);
+  if (savedText) {
+    linkText.textContent = savedText;
+  }
+
+  editButton.addEventListener('click', () => {
+    const newText = prompt('Введите новое название:', linkText.textContent);
+    if (newText) {
+      linkText.textContent = newText;
+    }
+    localStorage.setItem(linkId, linkText.textContent);
+  });
+});

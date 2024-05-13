@@ -1,57 +1,59 @@
-
-*{
+* {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	font-size: 40px;
 	text-align: center;
 	color: var(--text-color);
-}
-:root {
-	--bg-color: #6A2C70;
-	--text-color: #F39F5A;
-	--main-panel-color: #B83B5E;
-	--input-color: #FFF7F1;
-}
-
-body{
+ }
+ :root { 
+	--bg-color: #2C3333; 
+	--text-color: #A5C9CA;
+	--main-panel-color: #395B64;
+	--input-color: #E7F6F2;
+	
+	/* --bg-color: #191A19; 
+	--text-color: #D8E9A8;
+	--main-panel-color: #1E5128;
+	--input-color: #4E9F3D; */
+ }
+ 
+ body {
 	width: 100%;
 	min-height: 100vh;
 	background: var(--bg-color);
-}
-.nav-link {
-	padding: .5em;
-}
-#f, #t {
-	text-decoration: none;
-}
-
-main {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+ }
+ .nav-link {
+	margin-left: 25px;
+	padding: .2em;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
-.container {
+ }
+ #f, #t, #fo {
+	text-decoration: none;
+ }
+ 
+ .container {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	margin-top: 1em;
+	padding: 10px;
+	margin-right: 25vw;
 	width: 15em;
 	min-height: 75vh;
-	background: var(--main-panel-color);
-	padding: 10px;
+	/* background: var(--main-panel-color); */
 	border-radius: 15px;
-}
-.add {
+ }
+ .add {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border-radius: 20px;
-	margin-top: 1em;
-}
-input {
+ }
+ input {
 	background-color: var(--input-color);
 	border-radius: 20px;
 	width: 80%;
@@ -60,8 +62,8 @@ input {
 	padding-right: 2.5em;
 	border: none;
 	outline: none;
-}
-#addBtn {
+ }
+ #addBtn {
 	align-self: flex-end;
 	margin-left: 7.9em;
 	color: var(--input-color);
@@ -72,27 +74,27 @@ input {
 	border-radius: 20px;
 	border: none;
 	outline: none;
-}
-.btn {
+ }
+ .btn {
 	width: 45px;
 	height:45px;
 	border-radius: 50%;
-	margin-left: 2.5em;
+	margin-left: 3em;
 	background-color: var(--text-color);
 	color: var(--input-color);
 	font-size: 25px;
 	border: none;
-}
-.btn:active,
-#addBtn:active {
+ }
+ .btn:active,
+ #addBtn:active {
 	background-color: orange;
-}
-
-ul {
+ }
+ 
+ ul {
 	padding: 28px 0;
-}
-
-ul li {
+ }
+ 
+ ul li {
 	text-align: start;
 	width: 88%;
 	list-style: none;
@@ -102,74 +104,107 @@ ul li {
 	margin-left: 1em;
 	padding-top: .1em;
 	cursor: pointer;
-}
-ul li::selection {
+ }
+ ul li::selection {
 	color: var(--input-color);
-  background-color: var(--text-color);
-} 
-ul li::before {
+	 background-color: var(--text-color);
+ } 
+ ul li::before {
 	content: "";
 	position: absolute;
 	height: .7em;
 	width: .7em;
 	border-radius: 50%;
-	background-image: url(../images/unchecked.png);
+	background-image: url(images/unchecked.png);
 	background-size: cover;
 	background-position: center;
 	top: .4em;
 	left: -1em;
-}
-
-ul li.checked {
+ }
+ 
+ ul li.checked {
 	color: #555;
 	text-decoration: line-through;
-}
-ul li.checked::before {
-	background-image: url(../images/checked.png);
-}
-ul li span {
+ }
+ ul li.checked::before {
+	background-image: url(images/checked.png);
+ }
+ ul li span {
 	position: absolute;
 	user-select: none;
 	color: var(--input-color);
 	top: .2em;
 	right: 0;
 	left: 13em;
-}
-ul li span:hover {
+ }
+ ul li span:hover {
 	cursor: pointer;
 	color: var(--text-color);
-}
-#listContainer {
+ }
+ #listContainer {
 	word-break: break-word;
-}
-
-
-@media (max-width: 1190px) {
+ }
+ 
+ 
+ @media (max-width: 1190px) {
 	#addBtn {
-		width: 13%;
+	 width: 13%;
 	}
 	input {
-		padding-right: 2.8em;
+	 padding-right: 2.8em;
 	}
-}
-
-@media (max-width: 700px) {
-	input {
-		padding-right: 2.8em;
-	}
+ }
+ 
+ @media (max-width: 700px) {
 	* {
-		font-size: 20px;
+	font-size: 22px;
+	}
+	.nav-link {
+		display: inline;
+		padding: 0;
+		margin-left: 0;
+		margin-right: 5vw;
+	}
+	body {
+		flex-direction: column;
+	}
+	input {
+	 padding-right: 2.8em;
+	}
+	.container {
+		margin-right: 0;
 	}
 	#addBtn {
-		width: 17%;
-		margin-right: .7em;
+	 width: 17%;
+	 margin-right: .7em;
 	}
 	.btn {
-		width: 23px;
-		height: 23px;
-		font-size: 13px;
+	 width: 23px;
+	 height: 23px;
+	 font-size: 13px;
 	}
 	ul li span {
-		left: 12.6em;
+	 left: 12.6em;
 	}
 }
+
+.nav-link {
+  position: relative;
+}
+
+.edit-buttons {
+  display: none;
+  position: absolute;
+  left: 100%;
+}
+
+.nav-link:hover .edit-buttons {
+  display: block;
+}
+
+.edit-btn {
+  border-radius: 25px;
+	padding: .2em;
+	font-size: 25px;
+}
+

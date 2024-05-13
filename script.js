@@ -60,3 +60,25 @@ function speech() {
     recognizer.start();
 }
 
+// Находим все ссылки с классом nav-link
+const navLinks = document.querySelectorAll('.nav-link');
+
+navLinks.forEach(link => {
+  const linkId = link.id; // Получаем ID ссылки
+  const linkText = link.querySelector('.link-text');
+  const editButton = link.querySelector('.edit-btn');
+
+  // Загружаем текст ссылки из localStorage при загрузке страницы
+  const savedText = localStorage.getItem(linkId);
+  if (savedText) {
+    linkText.textContent = savedText;
+  }
+
+  editButton.addEventListener('click', () => {
+    const newText = prompt('Введите новое название:', linkText.textContent);
+    if (newText) {
+      linkText.textContent = newText;
+    }
+    localStorage.setItem(linkId, linkText.textContent);
+  });
+});
